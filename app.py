@@ -1,23 +1,22 @@
 from flask import Flask, request, render_template
 import pickle
 import numpy as np
-import requests
 import os
 
 app = Flask(__name__)
 
 
-import gdown
+import gzip
 
-file_id = "1h_lsM0_OMu2-88uSwymnxLlTDRN2Onik"
-destination = "model.pkl"
+model_path = "model_compressed.pkl.gz"
 
-if not os.path.exists(destination):
-    url = f"https://drive.google.com/uc?id={file_id}"
-    gdown.download(url, destination, quiet=False, fuzzy=True)
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"{model_path} not found. Make sure it's in the repo.")
 
-with open(destination, "rb") as file:
-    model = pickle.load(file)
+with gzip.open(model_path, "rb") as f:
+    model = pickle.load(f)
+
+
 
 
 
