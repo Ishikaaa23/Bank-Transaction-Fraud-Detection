@@ -7,16 +7,19 @@ import os
 app = Flask(__name__)
 
 
-# Download model only if not already present
-if not os.path.exists("model.pkl"):
-    url = "https://drive.google.com/uc?export=download&id=1h_lsM0_OMu2-88uSwymnxLlTDRN2Onik"  # <-- put your actual link here
-    r = requests.get(url)
-    with open("model.pkl", "wb") as f:
-        f.write(r.content)
+import gdown
 
-# Load the model
-with open("model.pkl", "rb") as file:
+file_id = "1h_lsM0_OMu2-88uSwymnxLlTDRN2Onik"
+destination = "model.pkl"
+
+if not os.path.exists(destination):
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, destination, quiet=False, fuzzy=True)
+
+with open(destination, "rb") as file:
     model = pickle.load(file)
+
+
 
 
 @app.route('/')
