@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Download model only if not already present
 if not os.path.exists("model.pkl"):
-    url = "https://drive.google.com/file/d/1h_lsM0_OMu2-88uSwymnxLlTDRN2Onik/view?usp=sharing"  # <-- put your actual link here
+    url = "https://drive.google.com/uc?export=download&id=1h_lsM0_OMu2-88uSwymnxLlTDRN2Onik"  # <-- put your actual link here
     r = requests.get(url)
     with open("model.pkl", "wb") as f:
         f.write(r.content)
