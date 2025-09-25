@@ -10,5 +10,5 @@ Predict fraudulent bank transactions using a machine learning model.
 - End-to-end workflow: data preprocessing, EDA, model training, and prediction  
 - Deployed using render
 
- ## This is still an ongoing project. Since the data is imbalanced, the model is unable to catch fraud transaction.
+ ### This is still an ongoing project. Since the data is imbalanced, the model is unable to catch fraud transaction.
 
