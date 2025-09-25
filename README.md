@@ -10,5 +10,8 @@ Predict fraudulent bank transactions using a machine learning model.
 - End-to-end workflow: data preprocessing, EDA, model training, and prediction  
 - Deployed using render
 
+## 🚀 Live Demo
+[Click here to try the project](https://bank-transaction-fraud-detection.onrender.com)
+
  ### This is still an ongoing project. Since the data is imbalanced, the model is unable to catch fraud transaction.
 
